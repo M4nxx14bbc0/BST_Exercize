@@ -63,6 +63,11 @@ void inorder(struct node* root) {
     }
 }
 
+/**
+ * bfvubufbd
+ * dcjsbcdbscbd
+ * cjbds
+*/
 void main() {
     // Creiamo il nodo root
     struct node* root = NULL;

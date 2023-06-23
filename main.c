@@ -63,10 +63,58 @@ void inorder(struct node* root) {
     }
 }
 
+  
+// Returns height of the BST
+int height(struct node* node)
+{
+    if (node == NULL)
+        return 0;
+    else {
+  
+        // Compute the depth of each subtree
+        int lDepth = height(node->left);
+        int rDepth = height(node->right);
+  
+        // Use the larger one
+        if (lDepth > rDepth)
+            return (lDepth + 1);
+        else
+            return (rDepth + 1);
+    }
+}
+  
+// Print nodes at a given level
+void printGivenLevel(struct node* root,
+                     int level)
+{
+    if (root == NULL)
+        return;
+    if (level == 1)
+        printf("%d ", root->key);
+    else if (level > 1) {
+  
+        // Recursive Call
+        printGivenLevel(root->left, level - 1);
+        printGivenLevel(root->right, level - 1);
+    }
+}
+  
+// Function to line by line print
+// level order traversal a tree
+void printLevelOrder(struct node* root)
+{
+    int h = height(root);
+    int i;
+    for (i = 1; i <= h; i++) {
+        printGivenLevel(root, i);
+        printf("\n");
+    }
+}
+
 void main() {
     // Creiamo il nodo root
     struct node* root = NULL;
-    
+
     // Inseriamo dei valori nella tree
     root = insert(root, 50);
     insert(root, 30);

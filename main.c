@@ -63,7 +63,10 @@ void inorder(struct node* root) {
     }
 }
 
-  
+void nonFaNulla(){
+    printf("ybcdsb");
+}
+
 // Returns height of the BST
 int height(struct node* node)
 {
